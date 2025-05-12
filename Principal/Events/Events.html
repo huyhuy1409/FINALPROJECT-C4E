@@ -117,21 +117,7 @@
                     <div class="flex items-center h-[60px] justify-between mb-6">
                       <h1 class="text-[36px] font-bold text-[#363B64]">Calendar</h1>
                       <div class="flex items-center gap-4">
-                        <div class="flex items-center gap-2">
-                          <select class="border border-[#4D44B5] rounded-full px-4 py-2 text-[#4D44B5] focus:outline-none">
-                            <option>January</option>
-                            <option>February</option>
-                            <option>March</option>
-                            <option>April</option>
-                          </select>
-                          <select class="border border-[#4D44B5] rounded-full px-4 py-2 text-[#4D44B5] focus:outline-none">
-                            <option>2021</option>
-                            <option>2022</option>
-                            <option>2023</option>
-                            <option>2024</option>
-                          </select>
-                        </div>
-                        <button class="bg-indigo-500 text-white rounded-full px-5 py-2 font-semibold shadow hover:bg-indigo-600">
+                        <button id="newScheduleButton" class="bg-indigo-500 text-white rounded-full px-5 py-2 font-semibold shadow hover:bg-indigo-600">
                           + New Schedule
                         </button>
                       </div>
@@ -403,6 +389,17 @@
                         View more</div>
                 </div>
             </div> 
+        </div>
+        <div id="newScheduleModal" class="fixed inset-0  bg-opacity-40 flex items-center justify-center hidden z-50">
+          <div class="bg-white rounded-xl p-6 w-[400px] space-y-4">
+            <h2 class="text-2xl font-bold text-[#2f3676]">Add New Schedule</h2>
+            <input type="text" id="scheduleTitle" placeholder="Schedule Title" class="w-full border rounded px-3 py-2" />
+            <input type="number" id="scheduleDay" placeholder="Day (e.g. 10)" class="w-full border rounded px-3 py-2" min="1" max="31" />
+            <div class="flex gap-2">
+              <button id="saveScheduleBtn" class="flex-1 bg-[#4D44B5] text-white py-2 rounded hover:bg-[#3c38a1]">Add</button>
+              <button id="closeScheduleBtn" class="flex-1 text-gray-600 hover:text-black">Cancel</button>
+            </div>
+          </div>
         </div>
       <script src="eventprin.js"></script>
     </body>
