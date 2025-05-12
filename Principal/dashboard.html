@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="flex h-[2310px]">
+    <div class="part1 bg-[#4D44B5] w-[20%] flex flex-col items-center ">
+        <div class="title Akademi font-bold text-[36px] h-[54px] font-sans flex  gap-[30px] mt-[40px] ">
+            <div class="w-[48px] h-[48px] rounded-[16px] bg-[#FB7D5B] text-white flex  justify-center">
+                <p>A</p>
+            </div>
+            <p class="text-white">Akademi</p>
+        </div>
+        <div class="flex flex-col gap-[8px] mt-[46px]">
+        <a href="./dashboard.html" class="options ml-[13%] flex rounded-[40px] px-[16px] py-[24px] gap-[24px] hover:text-[#4D44B5] hover:bg-white ">
+            <img src="Home.png" class="w-[40px] h-[40px]" />
+            <p class="font-medium text-[#C1BBEB] mt-[1%] font-sans text-[18px] "> Dashboard</p>
+        </a>
+        <a href="./Students/students.html" class="options ml-[13%] flex rounded-[40px] px-[16px] py-[24px] gap-[24px] hover:text-[#4D44B5] hover:bg-white ">
+            <img src="Student.png" class="w-[40px] h-[40px]" />
+            <p class="font-medium text-[#C1BBEB] mt-[1%] font-sans text-[18px] ">Students</p>
+        </a>
+        <a href="./Teachers/Teacher.html" class="options ml-[13%] flex  rounded-[40px] px-[16px] py-[24px] gap-[24px] hover:text-[#4D44B5] hover:bg-white ">
+            <img src="Teacher.png" class="w-[40px] h-[40px]" />
+            <p class="font-medium text-[#C1BBEB] mt-[1%] font-sans text-[18px] "> Teachers</p>
+        </a>
+        <a href="./Events/Events.html" class="options ml-[13%] flex  rounded-[40px] px-[16px] py-[24px] gap-[24px] hover:text-[#4D44B5] hover:bg-white ">
+            <img src="Calendar.png" class="w-[40px] h-[40px]" />
+            <p class="font-medium text-[#C1BBEB] mt-[1%] font-sans text-[18px] ">Event </p>
+        </a>
+
+        </div>
+        <div class="mt-[80px] flex flex-col gap-[15px] ml-[34px] mr-[19px]">
+            <p class="font-bold text-white text-[10px] font-sans">Akademi - School Admission Dashboard</p>
+            <p class="font-medium text-white text-[10px] font-sans">Made with ♥ by Peterdraw</p>
+
+        </div>
+
+    </div>
+    <div class="part2 w-[60%] bg-[#F3F4FF] flex flex-col items-center">
+        <div class="searchtab flex justify-between w-[91%] mt-[50px]">
+            <p class="font-bold text-[#303972] text-[36px] font-sans">Dashboard</p>
+            <div class="search px-[2px] rounded-[40px] bg-[#FFFFFF] w-[350px] flex items-center">
+                <div class="flex items-center gap-[16px] ml-[20px]">
+                    <img src="Search.png" class="w-[32px] h-[32px]" />
+                    <input type="text" placeholder="Search..." 
+        class="bg-transparent outline-none ml-2 text-gray-700 placeholder-gray-400 flex-1" />
+                </div>
+            </div>
+        </div> 
+        <div class="sumation flex rounded-[20px] bg-white items-center justify-center w-[91%] h-[172px] mt-[40px]">
+            <div class="contentsumation h-[81px] flex w-[90%] gap-[7%] justify-between">
+                <div class="boxcontent flex items-center justify-between gap-[20px]">
+                    <img src="icon.png" class="h-[76px] w-[50%]" />
+                    <div class="boxcontenttext flex flex-col gap-[3px]">
+                        <p class="font-normal text-[18px] text-[#A098AE]">Students</p>
+                        <p class="font-bold text-[36px]">932</p>
+                    </div>
+                </div>
+                <div class="boxcontent flex items-center justify-between gap-[20px]">
+                    <img src="icon (1).png" class="h-[71px] w-[50%]" />
+                    <div class="boxcontenttext flex flex-col gap-[3px]">
+                        <p class="font-normal text-[18px] text-[#A098AE]">Teachers</p>
+                        <p class="font-bold text-[36px]">754</p>
+                    </div>
+                </div>
+                <div class="boxcontent flex items-center justify-between gap-[20px]">
+                    <img src="icon (2).png" class="h-[71px] w-[50%]" />
+                    <div class="boxcontenttext flex flex-col gap-[3px]">
+                        <p class="font-normal text-[18px] text-[#A098AE]">Events</p>
+                        <p class="font-bold text-[36px]">40</p>
+                    </div>
+                </div>
+                <div class="boxcontent flex items-center justify-between gap-[20px]">
+                    <img src="icon (3).png" class="h-[71px] w-[50%]" />
+                    <div class="boxcontenttext flex flex-col gap-[3px]">
+                        <p class="font-normal text-[18px] text-[#A098AE]">Foods</p>
+                        <p class="font-bold text-[36px]">32K</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="graph w-[91%] h-[479px] flex flex-col rounded-[20px]   bg-white my-[40px]">
+            <div class="graphtitle my-[32px] mx-[3%] flex justify-between h-[52px] items-center">
+                <p class="font-bold text-[17px]  text-[#303972]">School Performance</p>
+                <div class="stati w-[18%] flex justify-between">
+                    <div class="statiii flex gap-[2px]">
+                        <div class="w-2 h-2 rounded-full bg-yellow-400"></div>
+                        <div class="flex flex-col">
+                        <p class="font-normal text-[10px]"> This Week </p>
+                        <p class="font-bold text-[18px]"> 1245</p>
+                        </div>
+                    </div>
+                    <div class="statiii flex gap-[2px]">
+                        <div class="w-2 h-2 rounded-full bg-[#FB7D5B]"></div>
+                        <div class="flex flex-col">
+                        <p class="font-normal text-[10px]"> Last Week </p>
+                        <p class="font-bold text-[18px]"> 1356</p>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mx-[3%] ">
+                <img src="chart.png" class="h-[339px] w-[90%]"/>
+            </div>"
+        </div>
+        <div class="w-[91%] flex justify-between h-[562px]">
+        <div class="bg-white flex flex-col gap-[20px] p-6 rounded-[20px] w-[48%]">
+            <h2 class="text-lg font-bold mb-4 text-[#303972]">School Calendar</h2>
+            <div class="h-[420px]">
+            <div class="grid grid-cols-7 text-center text-gray-600 font-semibold h-[47px]">
+              <div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div>
+            </div>
+            <div class="grid grid-cols-7 text-center mt-2 text-gray-800 h-[370px]">
+              <div></div> <!-- Sun padding -->
+              <div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div>
+              <div>7</div><div>8</div><div>9</div><div>10</div><div>11</div><div>12</div><div>13</div>
+              <div>14</div><div>15</div><div>16</div><div>17</div><div>18</div><div>19</div>
+              <div class="bg-yellow-300 rounded-full">20</div>
+              <div>21</div><div class="bg-red-500 text-white rounded-full">22</div><div>23</div><div>24</div><div>25</div><div>26</div><div>27</div>
+              <div>28</div><div>29</div><div>30</div><div>31</div>
+            </div>
+          </div>
+          </div>
+          <div class="bg-white flex flex-col gap-[20px] p-6 rounded-[20px] w-[48%]">
+            <div class="graphtitle mt-[32px] mx-[3%] flex justify-between h-[52px] items-center">
+                <p class="font-bold text-[17px]  text-[#303972]">School Performance</p>
+                <div class="stati w-[30%] flex justify-between">
+                    <div class="statiii flex gap-[2px]">
+                        <div class="w-2 h-2 rounded-full bg-yellow-400"></div>
+                        <div class="flex flex-col">
+                        <p class="font-normal text-[10px]"> This Week </p>
+                        <p class="font-bold text-[18px]"> 1245</p>
+                        </div>
+                    </div>
+                    <div class="statiii flex gap-[2px]">
+                        <div class="w-2 h-2 rounded-full bg-[#FB7D5B]"></div>
+                        <div class="flex flex-col">
+                        <p class="font-normal text-[10px]"> Last Week </p>
+                        <p class="font-bold text-[18px]"> 1356</p>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <img src="chart (1).png" class="w-[80%] h-[400px]" />
+          </div>
+          
+        </div>
+        <div class="lastgraph w-[91%] h-[725px] flex flex-col rounded-[20px]   bg-white mt-[40px]">
+            <p class="titlelast px-[32px] pt-[32px] pb-[24px] font-bold text-[24px] text-[#303972]">Unpaid Student Intuition</p>
+            <div class="listgraph flex flex-col h-[520px]">
+                <div class="debtstu h-[104px] flex items-center justify-between">
+                    <div class="debtstucom1 flex gap-[10px] items-center w-[199px] ml-[20px]">
+                    <img src="profilePicture.png" class="h-[48px] w-[48px] hidden 2xl:block" />
+                    <p class="font-bold text-[18px] text-[#303972]">Samantha William</p>
+                    </div>
+                    <p class="font-bold text-[18px] text-[#4D44B5]">ID 123456789</p>
+                    <div class="h-[48px] flex gap-[5px]">
+                        <img src="icon (4).png" class="w-[48px]" />
+                        <div class="classdebtsu flex flex-col">
+                            <p class="font-normal text-[14px] text-[#A098AE]">Class</p>
+                            <p class="font-bold text-[18px] text-[#303972]">VII A</p>
+                        </div>
+                    </div>
+                    <p class="font-bold text-[18px] text-[#303972]">$ 50,036</p>
+                    <img src="menu.png" class="w-[80px] h-[24px]" />
+                </div>
+                <div class="debtstu h-[104px] flex items-center justify-between">
+                    <div class="debtstucom1 flex gap-[10px] items-center w-[199px] ml-[20px]">
+                    <img src="profilePicture.png" class="h-[48px] w-[48px] hidden 2xl:block" />
+                    <p class="font-bold text-[18px] text-[#303972]">Tony Soap</p>
+                    </div>
+                    <p class="font-bold text-[18px] text-[#4D44B5]">ID 123456789</p>
+                    <div class="h-[48px] flex gap-[5px]">
+                        <img src="icon (4).png" class="w-[48px]" />
+                        <div class="classdebtsu flex flex-col">
+                            <p class="font-normal text-[14px] text-[#A098AE]">Class</p>
+                            <p class="font-bold text-[18px] text-[#303972]">VII A</p>
+                        </div>
+                    </div>
+                    <p class="font-bold text-[18px] text-[#303972]">$ 50,036</p>
+                    <img src="menu.png" class="w-[80px] h-[24px]" />
+                </div>
+                <div class="debtstu h-[104px] flex items-center justify-between">
+                    <div class="debtstucom1 flex gap-[10px] items-center w-[199px] ml-[20px]">
+                    <img src="profilePicture.png" class="h-[48px] w-[48px] hidden 2xl:block" />
+                    <p class="font-bold text-[18px] text-[#303972]">Jordan Nico</p>
+                    </div>
+                    <p class="font-bold text-[18px] text-[#4D44B5]">ID 123456789</p>
+                    <div class="h-[48px] flex gap-[5px]">
+                        <img src="icon (4).png" class="w-[48px]" />
+                        <div class="classdebtsu flex flex-col">
+                            <p class="font-normal text-[14px] text-[#A098AE]">Class</p>
+                            <p class="font-bold text-[18px] text-[#303972]">VII A</p>
+                        </div>
+                    </div>
+                    <p class="font-bold text-[18px] text-[#303972]">$ 50,036</p>
+                    <img src="menu.png" class="w-[80px] h-[24px]" />
+                </div>
+                <div class="debtstu h-[104px] flex items-center justify-between">
+                    <div class="debtstucom1 flex gap-[10px] items-center w-[199px] ml-[20px]">
+                    <img src="profilePicture.png" class="h-[48px] w-[48px] hidden 2xl:block" />
+                    <p class="font-bold text-[18px] text-[#303972]">Karen Hope</p>
+                    </div>
+                    <p class="font-bold text-[18px] text-[#4D44B5]">ID 123456789</p>
+                    <div class="h-[48px] flex gap-[5px]">
+                        <img src="icon (4).png" class="w-[48px]" />
+                        <div class="classdebtsu flex flex-col">
+                            <p class="font-normal text-[14px] text-[#A098AE]">Class</p>
+                            <p class="font-bold text-[18px] text-[#303972]">VII A</p>
+                        </div>
+                    </div>
+                    <p class="font-bold text-[18px] text-[#303972]">$ 50,036</p>
+                    <img src="menu.png" class="w-[80px] h-[24px]" />
+                </div>
+                <div class="debtstu h-[104px] flex items-center justify-between">
+                    <div class="debtstucom1 flex gap-[10px] items-center w-[199px] ml-[20px]">
+                    <img src="profilePicture.png" class="h-[48px] w-[48px] hidden 2xl:block" />
+                    <p class="font-bold text-[18px] text-[#303972]">Nadila Adja</p>
+                    </div>
+                    <p class="font-bold text-[18px] text-[#4D44B5]">ID 123456789</p>
+                    <div class="h-[48px] flex gap-[5px]">
+                        <img src="icon (4).png" class="w-[48px]" />
+                        <div class="classdebtsu flex flex-col">
+                            <p class="font-normal text-[14px] text-[#A098AE]">Class</p>
+                            <p class="font-bold text-[18px] text-[#303972]">VII A</p>
+                        </div>
+                    </div>
+                    <p class="font-bold text-[18px] text-[#303972]">$ 50,036</p>
+                    <img src="menu.png" class="w-[80px] h-[24px]" />
+                </div>
+            </div>
+            <div class="flex flex-col md:flex-row items-center justify-between p-4 gap-4">
+                <div class="text-sm text-gray-600">
+                  Showing 1-5 from <span class="font-semibold text-[#4D44B5]">100</span> data
+                </div>
+                <div class="flex items-center space-x-2">
+                  <a href="#" class="p-2 text-gray-400 hover:text-gray-600">◀</a>
+                  <a href="#" class="w-8 h-8 flex items-center justify-center bg-[#4D44B5] text-white border rounded-full">1</a>
+                  <a href="#" class="w-8 h-8 flex items-center justify-center bg-white text-gray-700 border hover:text-white rounded-full hover:bg-[#4D44B5]">2</a>
+                  <a href="#" class="w-8 h-8 flex items-center justify-center bg-white text-gray-700 border hover:text-white rounded-full hover:bg-[#4D44B5]">3</a>
+                  <a href="#" class="p-2 text-gray-400 hover:text-gray-600">▶</a>
+                </div>
+              </div>
+          
+        </div>
+    </div>
+    <div class="part3 flex flex-col w-[20%]">
+        <div class="recentacss mt-[40px] ml-[32px] h-[557px] mr-[50px] flex flex-col ">
+            <div class=" h-[60px] bg-white rounded-md  flex items-center justify-between items-center gap-[5px]">
+                <div class="relative">
+                    <!-- Bell Button -->
+                    <div id="bellButton" class="nottbut w-[60px] h-[60px] bg-white rounded-full shadow flex items-center justify-center cursor-pointer hover:bg-gray-100 transition">
+                      <img src="bell.png" class="w-[24px] h-[24px]" />
+                    </div>
+                  
+                    <!-- Notification Board -->
+                    <div id="newsBoard" class="hidden absolute right-0 mt-2 w-[300px] bg-white rounded-md shadow-lg py-2 z-10">
+                      <p class="px-4 py-2 text-gray-800 font-bold border-b">Notifications</p>
+                      <div class="px-4 py-2">
+                        <input id="notificationInput" type="text" placeholder="Send to students and teacher" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring" />
+                      </div>
+                      <div class="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                        📢 New assignment posted!
+                      </div>
+                      <div class="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                        🗓️ Parent-teacher meeting next week.
+                      </div>
+                      <div class="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                        🏆 Congrats! You made the honor roll!
+                      </div>
+                      <div class="px-4 py-2 text-center text-blue-500 hover:underline cursor-pointer" id="viewAll">
+                        View All
+                      </div>
+                      
+                    </div>
+                  </div>
+                  <!-- View More Modal -->
+                  <div id="modalOverlay" class="fixed inset-0 backdrop-blur-sm flex items-center justify-center z-50 hidden">
+    <div class="bg-white w-[400px] rounded-lg shadow-lg p-6">
+      <h2 class="text-xl font-bold mb-4">All Notifications</h2>
+      <ul class="space-y-2 text-gray-700">
+        <li>📢 New assignment posted!</li>
+        <li>🗓️ Parent-teacher meeting next week.</li>
+        <li>🏆 Congrats! You made the honor roll!</li>
+        <li>📚 Semester ends next month. Get ready!</li>
+      </ul>
+      <div class="text-right mt-6">
+        <button id="closeModal" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Close</button>
+      </div>
+    </div>
+  </div>
+  
+                <div class="relative">
+                  <!-- Button -->
+                  <div id="menuButton" class="w-[60px] h-[60px] bg-white rounded-full shadow flex items-center justify-center cursor-pointer hover:bg-gray-100 transition">
+                    <img src="Vector.png" class="w-[24px] h-[24px]" />
+                  </div>
+                
+                  <!-- Dropdown menu -->
+                  <div id="dropdownMenu" class="hidden absolute right-0 mt-2 w-[160px] bg-white rounded-md shadow-lg py-2 z-10">
+                    <a href="studentprofileprinci.html"class="block px-4 py-2 text-gray-800 hover:bg-gray-100" >Profile</a>
+                    <a href="../login.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Logout</a>
+                  </div>
+                </div>
+                <div class="w-[64px] h-[46px] flex flex-col">
+                    <p class="font-bold text-[14px] text-[#303972]">Nabila A.</p>
+                    <p class="font-normal text-[#A098A] opacity-50 text-[14px]">Admin</p>
+                </div>
+                <div class="h-[60px] w-[60px] bg-[#C1BBEB] rounded-[40px] "></div>
+
+            </div>
+            <div class="h-[61px] flex justify-between">
+                <div class="recenttstuu h-[202px] flex flex-col">
+                    <p class="font-bold text-[24px] text-[#303972]">Recent Students</p>
+                    <p class="font-normal opacity-50 text-[14px] text-[#A098AE]">You have 456 students</p>
+                </div>
+                <div class="w-[48px] h-[48px] flex items-center justify-center rounded-[40px] hidden 2xl:flex shadow text-[#A098AE] text-center font-bold text-[28px] hover:bg-[#4D44B5] hover:text-white "> + </div>
+            </div>
+            <div class="flex flex-col">
+                <div class="h-[48px] flex justify-between items-center mt-[35px]">
+                    <div class="flex gap-[20px]">
+                    <div class="h-[48px] w-[48px] bg-[#C1BBEB] rounded-[40px] hidden 2xl:flex"></div>
+                    <div class="w-[136px] flex flex-col">
+                        <p class="font-bold text-[14px] text-[#303972]">Samantha William</p>
+                        <p class="font-normal opacity-50 text-[14px] text-[#A098AE]">Class VII A</p>
+                    </div>
+                    </div>
+                    <div onclick="toggleChat(true)" class="h-[48px] pt-[10px] w-[48px] rounded-[40px] border-[1px] border-[#A098AE] text-[#A098AE] flex justify-center hover:bg-[#4D44B5] cursor-pointer">
+                        <img src="Email.png" class="w-[24px] h-[24px] flex items-center" alt="Email icon" />
+                      </div>
+            </div>
+            <div class="h-[48px] flex justify-between items-center mt-[32px]">
+                <div class="flex gap-[20px]">
+                <div class="h-[48px] w-[48px] bg-[#C1BBEB] rounded-[40px] hidden 2xl:flex"></div>
+                <div class="w-[136px] flex flex-col">
+                    <p class="font-bold text-[14px] text-[#303972]">Samantha William</p>
+                    <p class="font-normal opacity-50 text-[14px] text-[#A098AE]">Class VII A</p>
+                </div>
+                </div>
+                 
+<div onclick="toggleChat(true)" class="h-[48px] pt-[10px] w-[48px] rounded-[40px] border-[1px] border-[#A098AE] text-[#A098AE] flex justify-center hover:bg-[#4D44B5] cursor-pointer">
+  <img src="Email.png" class="w-[24px] h-[24px] flex items-center" alt="Email icon" />
+</div>
+
+    
+            </div>
+            <div class="h-[48px] flex justify-between items-center mt-[32px]">
+                <div class="flex gap-[20px]">
+                <div class="h-[48px] w-[48px] bg-[#C1BBEB] rounded-[40px] hidden 2xl:flex"></div>
+                <div class="w-[136px] flex flex-col">
+                    <p class="font-bold text-[14px] text-[#303972]">Samantha William</p>
+                    <p class="font-normal opacity-50 text-[14px] text-[#A098AE]">Class VII A</p>
+                </div>
+                </div>
+                 
+<div onclick="toggleChat(true)" class="h-[48px] pt-[10px] w-[48px] rounded-[40px] border-[1px] border-[#A098AE] text-[#A098AE] flex justify-center hover:bg-[#4D44B5] cursor-pointer">
+  <img src="Email.png" class="w-[24px] h-[24px] flex items-center" alt="Email icon" />
+</div>
+
+    
+            </div>
+            <div class="h-[48px] flex justify-between items-center mt-[32px]">
+                <div class="flex gap-[20px]">
+                <div class="h-[48px] w-[48px] bg-[#C1BBEB] rounded-[40px] hidden 2xl:flex"></div>
+                <div class="w-[136px] flex flex-col">
+                    <p class="font-bold text-[14px] text-[#303972]">Samantha William</p>
+                    <p class="font-normal opacity-50 text-[14px] text-[#A098AE]">Class VII A</p>
+                </div>
+                </div>
+                 
+<div onclick="toggleChat(true)" class="h-[48px] pt-[10px] w-[48px] rounded-[40px] border-[1px] border-[#A098AE] text-[#A098AE] flex justify-center hover:bg-[#4D44B5] cursor-pointer">
+  <img src="Email.png" class="w-[24px] h-[24px] flex items-center" alt="Email icon" />
+</div>
+
+            </div>
+            <div class="h-[48px] flex justify-between items-center my-[32px]">
+                <div class="flex gap-[20px]">
+                <div class="h-[48px] w-[48px] bg-[#C1BBEB] rounded-[40px] hidden 2xl:flex"></div>
+                <div class="w-[136px] flex flex-col">
+                    <p class="font-bold text-[14px] text-[#303972]">Samantha William</p>
+                    <p class="font-normal opacity-50 text-[14px] text-[#A098AE]">Class VII A</p>
+                </div>
+                </div>
+                
+<div onclick="toggleChat(true)" class="h-[48px] pt-[10px] w-[48px] rounded-[40px] border-[1px] border-[#A098AE] text-[#A098AE] flex justify-center hover:bg-[#4D44B5] cursor-pointer">
+  <img src="Email.png" class="w-[24px] h-[24px] flex items-center" alt="Email icon" />
+</div>
+
+    
+            </div>
+            <div onclick="toggleModal(true)" class="viewmoor rounded-[40px] h-[61px] bg-gray-500/10 justify-center flex items-center font-bold text-[#4D44B5] text-[18px] hover:bg-[#4D44B5] hover:text-white cursor-pointer">
+                View more
+              </div>
+              
+            <div id="chatbox" class="fixed z-[3] bottom-4 right-4 w-[300px] h-[400px] bg-white rounded-[20px] shadow-lg border border-gray-300 p-4 hidden flex-col justify-between">
+                    <div class="flex justify-between items-center mb-2">
+                      <h2 class="font-bold text-[#303972]">Chat with Samantha</h2>
+                      <button onclick="toggleChat(false)" class="text-[#A098AE] font-bold text-xl">×</button>
+                    </div>
+                    <div class="flex-1 overflow-y-auto mb-2 text-sm text-gray-600">
+                      <p>Chat Direct with your student</p>
+                    </div>
+                    <input type="text" placeholder="Type a message..." class="w-full border border-gray-300 rounded-[10px] px-3 py-2 text-sm focus:outline-none" />
+                  </div>
+
+<div id="studentModal" class="fixed inset-0 bg-black/50 flex justify-center items-center z-50 hidden">
+
+    <div class="bg-white w-[90%] max-w-[600px] max-h-[80%] overflow-y-auto p-6 rounded-2xl shadow-xl relative">
+      <button onclick="toggleModal(false)" class="absolute top-4 right-4 text-gray-400 text-2xl font-bold">×</button>
+      <h2 class="text-2xl font-bold mb-4 text-[#303972]">All Students</h2>
+      
+
+      <div class="space-y-4">
+
+        <div class="flex items-center justify-between border-b pb-3">
+          <div>
+            <p class="font-semibold text-[#303972]">Samantha William</p>
+            <p class="text-sm text-[#A098AE]">Class VII A</p>
+          </div>
+          <div onclick="toggleChat(true)" class="h-[48px] pt-[10px] w-[48px] rounded-[40px] border-[1px] border-[#A098AE] text-[#A098AE] flex justify-center hover:bg-[#4D44B5] cursor-pointer">
+            <img src="Email.png" class="w-[24px] h-[24px] flex items-center" alt="Email icon" />
+          </div>
+        </div>
+        <div class="flex items-center justify-between border-b pb-3">
+            <div>
+              <p class="font-semibold text-[#303972]">Samantha William</p>
+              <p class="text-sm text-[#A098AE]">Class VII A</p>
+            </div>
+            <div onclick="toggleChat(true)" class="h-[48px] pt-[10px] w-[48px] rounded-[40px] border-[1px] border-[#A098AE] text-[#A098AE] flex justify-center hover:bg-[#4D44B5] cursor-pointer">
+  <img src="Email.png" class="w-[24px] h-[24px] flex items-center" alt="Email icon" />
+</div>
+          </div>
+          <div class="flex items-center justify-between border-b pb-3">
+            <div>
+              <p class="font-semibold text-[#303972]">Samantha William</p>
+              <p class="text-sm text-[#A098AE]">Class VII A</p>
+            </div>
+            <div onclick="toggleChat(true)" class="h-[48px] pt-[10px] w-[48px] rounded-[40px] border-[1px] border-[#A098AE] text-[#A098AE] flex justify-center hover:bg-[#4D44B5] cursor-pointer">
+  <img src="Email.png" class="w-[24px] h-[24px] flex items-center" alt="Email icon" />
+</div>
+          </div>
+          <div class="flex items-center justify-between border-b pb-3">
+            <div>
+              <p class="font-semibold text-[#303972]">Samantha William</p>
+              <p class="text-sm text-[#A098AE]">Class VII A</p>
+            </div>
+            <div onclick="toggleChat(true)" class="h-[48px] pt-[10px] w-[48px] rounded-[40px] border-[1px] border-[#A098AE] text-[#A098AE] flex justify-center hover:bg-[#4D44B5] cursor-pointer">
+  <img src="Email.png" class="w-[24px] h-[24px] flex items-center" alt="Email icon" />
+</div>
+          </div>
+          <div class="flex items-center justify-between border-b pb-3">
+            <div>
+              <p class="font-semibold text-[#303972]">Samantha William</p>
+              <p class="text-sm text-[#A098AE]">Class VII A</p>
+            </div>
+            <div onclick="toggleChat(true)" class="h-[48px] pt-[10px] w-[48px] rounded-[40px] border-[1px] border-[#A098AE] text-[#A098AE] flex justify-center hover:bg-[#4D44B5] cursor-pointer">
+  <img src="Email.png" class="w-[24px] h-[24px] flex items-center" alt="Email icon" />
+</div>
+          </div>
+          <div class="flex items-center justify-between border-b pb-3">
+            <div>
+              <p class="font-semibold text-[#303972]">Samantha William</p>
+              <p class="text-sm text-[#A098AE]">Class VII A</p>
+            </div>
+            <div onclick="toggleChat(true)" class="h-[48px] pt-[10px] w-[48px] rounded-[40px] border-[1px] border-[#A098AE] text-[#A098AE] flex justify-center hover:bg-[#4D44B5] cursor-pointer">
+  <img src="Email.png" class="w-[24px] h-[24px] flex items-center" alt="Email icon" />
+</div>
+          </div>
+          <div class="flex items-center justify-between border-b pb-3">
+            <div>
+              <p class="font-semibold text-[#303972]">Samantha William</p>
+              <p class="text-sm text-[#A098AE]">Class VII A</p>
+            </div>
+            <div onclick="toggleChat(true)" class="h-[48px] pt-[10px] w-[48px] rounded-[40px] border-[1px] border-[#A098AE] text-[#A098AE] flex justify-center hover:bg-[#4D44B5] cursor-pointer">
+  <img src="Email.png" class="w-[24px] h-[24px] flex items-center" alt="Email icon" />
+</div>
+          </div>
+          <div class="flex items-center justify-between border-b pb-3">
+            <div>
+              <p class="font-semibold text-[#303972]">Samantha William</p>
+              <p class="text-sm text-[#A098AE]">Class VII A</p>
+            </div>
+            <div onclick="toggleChat(true)" class="h-[48px] pt-[10px] w-[48px] rounded-[40px] border-[1px] border-[#A098AE] text-[#A098AE] flex justify-center hover:bg-[#4D44B5] cursor-pointer">
+  <img src="Email.png" class="w-[24px] h-[24px] flex items-center" alt="Email icon" />
+</div>
+          </div>
+
+      </div>
+    </div>
+  </div>
+  
+            </div>
+
+        <div class=" mESS ml-[32px] mr-[50px] mt-[64px] h-[505px] flex flex-col">
+            <p class="font-bold text-[24px] text-[#303972]">Messages</p>
+            <div class="flex flex-col mt-[24px]">
+                <div class="h-[76px] flex gap-[20px] border-b border-[#A098AE]">
+                    <div class="h-[48px] w-[48px] bg-[#C1BBEB] rounded-[40px] hidden 2xl:flex"></div>
+                <div class="w-[136px] flex flex-col">
+                    <p class="font-bold text-[14px] text-[#303972]">Samantha William</p>
+                    <p class="font-normal opacity-50 text-[14px] text-[#A098AE]">Lorem ipsum dolor sit amet...              12:45pm</p>
+                </div>
+                </div>
+                <div class="h-[76px] flex gap-[20px] border-b border-[#A098AE] mt-[16px]">
+                    <div class="h-[48px] w-[48px] bg-[#C1BBEB] rounded-[40px] hidden 2xl:flex"></div>
+                <div class="w-[136px] flex flex-col">
+                    <p class="font-bold text-[14px] text-[#303972]">Tony Soap</p>
+                    <p class="font-normal opacity-50 text-[14px] text-[#A098AE]">Lorem ipsum dolor sit amet...              12:45pm</p>
+                </div>
+                </div>
+                <div class="h-[76px] flex gap-[20px] border-b border-[#A098AE] mt-[16px]">
+                    <div class="h-[48px] w-[48px] bg-[#C1BBEB] rounded-[40px] hidden 2xl:flex"></div>
+                <div class="w-[136px] flex flex-col">
+                    <p class="font-bold text-[14px] text-[#303972]">Jordan Nico</p>
+                    <p class="font-normal opacity-50 text-[14px] text-[#A098AE]">Lorem ipsum dolor sit amet...              12:45pm</p>
+                </div>
+                </div>
+                <div class="h-[76px] flex gap-[20px] border-b border-[#A098AE] mt-[16px]">
+                    <div class="h-[48px] w-[48px] bg-[#C1BBEB] rounded-[40px] hidden 2xl:flex"></div>
+                <div class="w-[136px] flex flex-col">
+                    <p class="font-bold text-[14px] text-[#303972]">Nadila Adja</p>
+                    <p class="font-normal opacity-50 text-[14px] text-[#A098AE]">Lorem ipsum dolor sit amet...              12:45pm</p>
+                </div>
+                </div>
+                
+            </div>
+            <div class="viewmoor rounded-[40px] h-[61px] bg-gray-500/10 justify-center flex items-center font-bold text-[#4D44B5] text-[18px] hover:bg-[#4D44B5] hover:text-white mt-[32px]">
+                View more</div>
+        </div>
+        <div class="ml-[32px] mr-[50px] mt-[34px] h-[930px] flex flex-col 2xl:mt-[64px]">
+            <p class="font-bold text-[24px] text-[#303972]">Current Foods Menu</p>
+            <div class="flex flex-col gap-[32px] mt-[29px]">
+                <div class="foodop1 h-[236px] flex flex-col justify-between">
+                    <div class="h-[160px] rounded-[18px] bg-[#C1BBEB]"></div>
+                    <div class="namefoddop flex flex-col h-[52px]">
+                        <p class="font-bold text-[18px] text-[#303972]">Beef Steak with Fried Potato</p>
+                    <p class="font-normal opacity-50 text-[14px] text-[#A098AE] hidden 2xl:flex">Lorem ipsum dolor sit amet...</p>
+                    </div>
+                </div>
+                <div class="foodop1 h-[236px] flex flex-col justify-between">
+                    <div class="h-[160px] rounded-[18px] bg-[#C1BBEB]"></div>
+                    <div class="namefoddop flex flex-col h-[52px]">
+                        <p class="font-bold text-[18px] text-[#303972]">Pancake with Honey</p>
+                    <p class="font-normal opacity-50 text-[14px] text-[#A098AE] hidden 2xl:flex">Lorem ipsum dolor sit amet...</p>
+                    </div>
+                </div>
+                <div class="foodop1 h-[236px] flex flex-col justify-between">
+                    <div class="h-[160px] rounded-[18px] bg-[#C1BBEB]"></div>
+                    <div class="namefoddop flex flex-col h-[52px]">
+                        <p class="font-bold text-[18px] text-[#303972]">Japanese Beef Ramen</p>
+                    <p class="font-normal opacity-50 text-[14px] text-[#A098AE] hidden 2xl:flex">Lorem ipsum dolor sit amet...</p>
+                    </div>
+                </div>
+            </div>
+            <div class="viewmoor rounded-[40px] h-[61px] bg-gray-500/10 justify-center flex items-center font-bold text-[#4D44B5] text-[18px] hover:bg-[#4D44B5] hover:text-white mt-[32px]">
+                View more</div>
+        </div>
+    </div>
+    <script src="dashboard.js"></script>
+</body>
+</html>

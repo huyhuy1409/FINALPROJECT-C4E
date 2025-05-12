@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teachers Workspace</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        .dropdown-content {
+          display: none;
+          position: absolute;
+          background-color: white;
+          min-width: 140px;
+          box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+          z-index: 1;
+          border: 1px solid #6c47ff; /* purple */
+          border-radius: 0.5rem;
+          padding: 0.5rem 0;
+        }
+        .dropdown:hover .dropdown-content {
+          display: block;
+          animation: fadeIn 0.3s ease;
+        }
+        @keyframes fadeIn {
+          from {opacity: 0;}
+          to {opacity: 1;}
+        }
+      </style>
+</head>
+<body class="flex h-[1512px]">
+    <div class="part1 bg-[#4D44B5] w-[20%] flex flex-col items-center ">
+        <div class="title Akademi font-bold text-[36px] h-[54px] font-sans flex  gap-[30px] mt-[40px] ">
+            <div class="w-[48px] h-[48px] rounded-[16px] bg-[#FB7D5B] text-white flex  justify-center">
+                <p>A</p>
+            </div>
+            <p class="text-white">Akademi</p>
+        </div>
+        <div class="flex flex-col gap-[8px] mt-[46px]">
+          <a href="../dashboard.html" class="options ml-[13%] flex rounded-[40px] px-[16px] py-[24px] gap-[24px] hover:text-[#4D44B5] hover:bg-white ">
+            <img src="Home.png" class="w-[40px] h-[40px]" />
+            <p class="font-medium text-[#C1BBEB] mt-[1%] font-sans text-[18px] "> Dashboard</p>
+        </a>
+        <a href="../Students/students.html" class="options ml-[13%] flex rounded-[40px] px-[16px] py-[24px] gap-[24px] hover:text-[#4D44B5] hover:bg-white ">
+            <img src="Student.png" class="w-[40px] h-[40px]" />
+            <p class="font-medium text-[#C1BBEB] mt-[1%] font-sans text-[18px] ">Students</p>
+        </a>
+        <a href="../Teachers/Teacher.html" class="options ml-[13%] flex  rounded-[40px] px-[16px] py-[24px] gap-[24px] hover:text-[#4D44B5] hover:bg-white ">
+            <img src="Teacher.png" class="w-[40px] h-[40px]" />
+            <p class="font-medium text-[#C1BBEB] mt-[1%] font-sans text-[18px] "> Teachers</p>
+        </a>
+        <a href="../Events/Events.html" class="options ml-[13%] flex  rounded-[40px] px-[16px] py-[24px] gap-[24px] hover:text-[#4D44B5] hover:bg-white ">
+            <img src="Calendar.png" class="w-[40px] h-[40px]" />
+            <p class="font-medium text-[#C1BBEB] mt-[1%] font-sans text-[18px] ">Event </p>
+        </a>
+
+        </div>
+        <div class="mt-[80px] flex flex-col gap-[15px] ml-[34px] mr-[19px]">
+            <p class="font-bold text-white text-[10px] font-sans">Akademi - School Admission Dashboard</p>
+            <p class="font-medium text-white text-[10px] font-sans">Made with ♥ by Peterdraw</p>
+
+        </div>
+
+    </div>
+    <div class="w-[80%] flex flex-col bg-[#F3F4FF]">
+        <div class="title mx-[50px] mt-[50px] h-[60px] flex justify-between items-center">
+            <p class="font-bold text-[36px] text-[#303972]">Teachers</p>
+            <div class=" h-[60px] bg-[#F3F4FF]] rounded-md  flex items-center justify-between items-center gap-[5px]">
+              <div class="relative">
+                <!-- Bell Button -->
+                <div id="bellButton" class="nottbut w-[60px] h-[60px] bg-white rounded-full shadow flex items-center justify-center cursor-pointer hover:bg-gray-100 transition">
+                  <img src="bell.png" class="w-[24px] h-[24px]" />
+                </div>
+              
+                <!-- Notification Board -->
+                <div id="newsBoard" class="hidden absolute right-0 mt-2 w-[300px] bg-white rounded-md shadow-lg py-2 z-10">
+                  <p class="px-4 py-2 text-gray-800 font-bold border-b">Notifications</p>
+                  <div class="px-4 py-2">
+                    <input id="notificationInput" type="text" placeholder="Send to students and teacher" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring" />
+                  </div>
+                  <div class="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                    📢 New assignment posted!
+                  </div>
+                  <div class="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                    🗓️ Parent-teacher meeting next week.
+                  </div>
+                  <div class="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                    🏆 Congrats! You made the honor roll!
+                  </div>
+                  <div class="px-4 py-2 text-center text-blue-500 hover:underline cursor-pointer" id="viewAll">
+                    View All
+                  </div>
+                  
+                </div>
+              </div>
+              <!-- View More Modal -->
+              <div id="modalOverlay" class="fixed inset-0 backdrop-blur-sm flex items-center justify-center z-50 hidden">
+<div class="bg-white w-[400px] rounded-lg shadow-lg p-6">
+  <h2 class="text-xl font-bold mb-4">All Notifications</h2>
+  <ul class="space-y-2 text-gray-700">
+    <li>📢 New assignment posted!</li>
+    <li>🗓️ Parent-teacher meeting next week.</li>
+    <li>🏆 Congrats! You made the honor roll!</li>
+    <li>📚 Semester ends next month. Get ready!</li>
+  </ul>
+  <div class="text-right mt-6">
+    <button id="closeModal" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Close</button>
+  </div>
+</div>
+</div>
+              <div class="relative">
+                <!-- Button -->
+                <div id="menuButton" class="w-[60px] h-[60px] bg-white rounded-full shadow flex items-center justify-center cursor-pointer hover:bg-gray-100 transition">
+                  <img src="Vector.png" class="w-[24px] h-[24px]" />
+                </div>
+              
+                <!-- Dropdown menu -->
+                <div id="dropdownMenu" class="hidden absolute right-0 mt-2 w-[160px] bg-white rounded-md shadow-lg py-2 z-10">
+                  <a href="../../login.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Logout</a>
+                </div>
+              </div>
+              <div class="w-[64px] h-[46px] flex flex-col">
+                  <p class="font-bold text-[14px] text-[#303972]">Nabila A.</p>
+                  <p class="font-normal text-[#A098A] opacity-50 text-[14px]">Admin</p>
+              </div>
+              <div class="h-[60px] w-[60px] bg-[#C1BBEB] rounded-[40px] "></div>
+
+          </div>
+        </div>
+        <div class="search mt-[40px] h-[60px] mx-[50px] flex justify-between">
+            <div class="search px-[2px] rounded-[40px] bg-[#FFFFFF] w-[350px] flex items-center">
+                <div class="flex items-center gap-[16px] ml-[20px]">
+                    <img src="Search.png" class="w-[32px] h-[32px]" />
+                    <input type="text" placeholder="Search..." 
+    class="bg-transparent outline-none ml-2 text-gray-700 placeholder-gray-400 flex-1" />
+                </div>
+            </div>
+            <div class="flex gap-[10px]">
+                <div class="flex items-center justify-center h-[60px] bg-[#f5f6ff] hidden lg:flex">
+
+                    
+                  </div>
+          
+              <!-- New Student Button -->
+              <button class="flex items-center h-[60px] w-[207px] bg-[#4D44B5] text-white hover:bg-white hover:text-[#4D44B5] font-medium text-sm px-[30px] py-[20px] rounded-full gap-[10px]" id="openTabButton">
+                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/>
+                </svg>
+                New Teacher
+            </button>
+            
+            <div id="teacherTab" class="hidden fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-[20px] bg-white text-[#303972] p-5 w-[350px] flex flex-col items-center gap-4 z-50 shadow-lg">
+              <div class="title Akademi font-bold text-[36px] h-[54px] font-sans flex items-center justify-center gap-[30px]">
+                <div class="w-[48px] h-[48px] rounded-[16px] bg-[#FB7D5B] text-white flex justify-center items-center">
+                  <p>A</p>
+                </div>
+                <p class="text-[#303972]">Akademi</p>
+              </div>
+            
+              <div class="flex gap-4 items-center">
+                <label for="teacherName" class="text-sm">Teacher Name:</label>
+                <input type="text" id="teacherName" class="px-2 py-1 border border-gray-300 rounded-md" placeholder="Enter teacher's name">
+              </div>
+            
+              <div class="flex gap-4 items-center">
+                <label for="subject" class="text-sm">Subject:</label>
+                <input type="text" id="subject" class="px-2 py-1 border border-gray-300 rounded-md" placeholder="Enter subject">
+              </div>
+            
+              <button id="saveButton" class="self-start bg-[#3c35a0] hover:bg-[#2c2780] text-white px-4 py-2 rounded-md">Save</button>
+            </div>
+            
+            
+            </div>
+        </div>
+        <!-- Outer wrapper -->
+<div class="mx-[50px] mt-[50px] mb-[50px] flex flex-col gap-[40px]">
+  
+  <!-- Cards container -->
+  <div class="flex flex-wrap gap-[40px] justify-center" id="teacherContainer">
+    <!-- cards go here -->
+  </div>
+
+  <!-- Pagination directly below -->
+  <div class="flex justify-center">
+    <div id="paginationContainer" class="flex items-center space-x-2"></div>
+  </div>
+
+</div>
+
+        
+    </div>
+    <div id="editModal" class="hidden fixed inset-0 flex items-center justify-center bg-black bg-opacity-30 z-50">
+      <div class="bg-white p-6 rounded-lg w-80 flex flex-col gap-4">
+        <h2 class="text-xl font-bold text-[#303972]">Edit Teacher Info</h2>
+        <input id="teacherNameInput" type="text" placeholder="New Teacher Name" class="border border-gray-300 rounded-md p-2" />
+        <input id="teacherJobInput" type="text" placeholder="New Subject" class="border border-gray-300 rounded-md p-2" />
+        <div class="flex justify-end gap-2">
+          <button onclick="closeEditModal()" class="px-4 py-2 bg-gray-300 rounded-md">Cancel</button>
+          <button onclick="saveChanges()" class="px-4 py-2 bg-[#4D44B5] text-white rounded-md">Save</button>
+        </div>
+      </div>
+    </div>
+    <script src="teachers.js"></script>
+
+
+</body>
+</html>

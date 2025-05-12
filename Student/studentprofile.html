@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Profile</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="flex h-[1325px]">
+    <div class="part1 bg-[#4D44B5] w-[20%] flex flex-col items-center ">
+        <div class="title Akademi font-bold text-[36px] h-[54px] font-sans flex  gap-[30px] mt-[40px] ">
+            <div class="w-[48px] h-[48px] rounded-[16px] bg-[#FB7D5B] text-white flex  justify-center">
+                <p>A</p>
+            </div>
+            <p class="text-white">Akademi</p>
+        </div>
+        <div class="flex flex-col gap-[8px] ml-[46px] w-[207px] mt-[46px]">
+        <a href="#" class="options flex w-[207px] rounded-[40px] px-[16px] py-[24px] gap-[24px] hover:text-[#4D44B5] hover:bg-white ">
+          <img src="Chat.png" class="w-[40px] h-[40px]" />
+          <p class="font-medium text-[#C1BBEB] mt-[1%] font-sans text-[18px] ">Support</p>
+      </a>
+      <a href="./student.html" class="options flex  rounded-[40px] px-[16px] py-[24px] gap-[24px] hover:text-[#4D44B5] hover:bg-white ">
+        <img src="Calendar.png" class="w-[40px] h-[40px]" />
+        <p class="font-medium text-[#C1BBEB] mt-[1%] font-sans text-[18px] ">Schedule</p>
+    </a>
+        </div>
+    </div>
+    <div class="w-[80%] flex flex-col bg-[#F3F4FF]">
+        <div class="title mx-[50px] mt-[50px] h-[60px] flex justify-between items-center">
+            <p class="font-bold text-[36px] text-[#303972]">Students</p>
+            <div class=" h-[60px] bg-[#F3F4FF] rounded-md  flex items-center justify-between items-center gap-[5px]">
+                <div class="search px-[2px] h-[60px] rounded-[40px] bg-[#FFFFFF] w-[350px] flex items-center">
+                    <div class="flex items-center gap-[16px] ml-[20px]">
+                        <img src="Search.png" class="w-[32px] h-[32px]" />
+                        <input type="text" placeholder="Search..." 
+        class="bg-transparent outline-none ml-2 text-gray-700 placeholder-gray-400 flex-1" />
+                    </div>
+                </div>
+                <div class="relative">
+                  <!-- Bell Button -->
+                  <div id="bellButton" class="nottbut w-[60px] h-[60px] bg-white rounded-full shadow flex items-center justify-center cursor-pointer hover:bg-gray-100 transition">
+                    <img src="bell.png" class="w-[24px] h-[24px]" />
+                  </div>
+                
+                  <!-- Notification Board -->
+                  <div id="newsBoard" class="hidden absolute right-0 mt-2 w-[300px] bg-white rounded-md shadow-lg py-2 z-10">
+                    <p class="px-4 py-2 text-gray-800 font-bold border-b">Notifications</p>
+                    <div class="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                      📢 New assignment posted!
+                    </div>
+                    <div class="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                      🗓️ Parent-teacher meeting next week.
+                    </div>
+                    <div class="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                      🏆 Congrats! You made the honor roll!
+                    </div>
+                    <div class="px-4 py-2 text-center text-blue-500 hover:underline cursor-pointer">
+                      View All
+                    </div>
+                  </div>
+                </div>
+                
+                <script>
+                  const bellButton = document.getElementById('bellButton');
+                  const newsBoard = document.getElementById('newsBoard');
+                
+                  bellButton.addEventListener('click', () => {
+                    newsBoard.classList.toggle('hidden');
+                  });
+                
+                  // Optional: close when clicking outside
+                  window.addEventListener('click', (e) => {
+                    if (!bellButton.contains(e.target) && !newsBoard.contains(e.target)) {
+                      newsBoard.classList.add('hidden');
+                    }
+                  });
+                </script>
+                <div class="relative">
+                  <!-- Button -->
+                  <div id="menuButton" class="w-[60px] h-[60px] bg-white rounded-full shadow flex items-center justify-center cursor-pointer hover:bg-gray-100 transition">
+                    <img src="Vector.png" class="w-[24px] h-[24px]" />
+                  </div>
+                
+                  <!-- Dropdown menu -->
+                  <div id="dropdownMenu" class="hidden absolute right-0 mt-2 w-[160px] bg-white rounded-md shadow-lg py-2 z-10">
+                    <a href="studentprofile.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">StudentProfile</a>
+                    <a href="../login.html" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Logout</a>
+                  </div>
+                </div>
+                
+                <script>
+                  const menuButton = document.getElementById('menuButton');
+                  const dropdownMenu = document.getElementById('dropdownMenu');
+                
+                  menuButton.addEventListener('click', () => {
+                    dropdownMenu.classList.toggle('hidden');
+                  });
+                
+                  // Optional: hide dropdown if click outside
+                  window.addEventListener('click', (e) => {
+                    if (!menuButton.contains(e.target) && !dropdownMenu.contains(e.target)) {
+                      dropdownMenu.classList.add('hidden');
+                    }
+                  });
+                </script>
+                <div class="w-[64px] h-[46px] flex flex-col">
+                    <p class="font-bold text-[14px] text-[#303972]">Nabila A.</p>
+                    <p class="font-normal text-[#A098A] opacity-50 text-[14px]">Admin</p>
+                </div>
+                <div class="h-[60px] w-[60px] bg-[#C1BBEB] rounded-[40px] "></div>
+
+            </div>
+        </div>
+        <div class="mx-[50px] mt-[40px] flex justify-between h-[1066px]">
+        <div class="flex flex-col justify-between w-[1017px]">
+            <div class="w-full max-w-[1017px] h-[498px] bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col">
+                <!-- Top Banner -->
+                <div class="relative bg-[#4D44B5] h-[140px] sm:h-[140px]">
+                  <div class="absolute -bottom-20 left-8">
+                    <label class="cursor-pointer">
+                        <input type="file" accept="image/*" class="hidden" onchange="updateProfilePic(event)">
+                        <div class="w-[140px] h-[140px] sm:w-[180px] sm:h-[180px] rounded-full bg-[#D1C4E9] border-4 border-white overflow-hidden">
+                          <img id="profileImage" src="default-avatar.png" alt="Profile" class="w-full h-full object-cover">
+                        </div>
+                      </label>
+                  </div>
+                  <!-- Background Decorations -->
+                  <div class="absolute top-6 right-6 sm:right-10 flex space-x-2 sm:space-x-3">
+                    <div class="w-[48px] h-[32px] sm:w-[72px] sm:h-[48px] bg-orange-400 rounded-md"></div>
+                    <div class="w-[64px] h-[48px] sm:w-[96px] sm:h-[64px] bg-yellow-400 rounded-md"></div>
+                  </div>
+                </div>
+              
+                <!-- Profile Content -->
+                <div class="flex-1 px-4 sm:px-8 pt-24 pb-8">
+                  <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center">
+                    <div class="flex flex-col gap-2">
+                        <div 
+                        contenteditable="true" 
+                        class="text-2xl sm:text-3xl font-bold text-[#303972] focus:outline-none"
+                      >
+                        Karen Hope
+                      </div>
+                      <p class="text-gray-400 font-semibold text-lg">Student</p>
+                    </div>
+                    <div class="text-gray-400 mt-4 sm:mt-0">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M6 12h.01M12 12h.01M18 12h.01" />
+                      </svg>
+                    </div>
+                  </div>
+              
+                  <!-- Information Section -->
+                  <div class="flex flex-col sm:flex-row items-start sm:items-center mt-9 sm:justify-between gap-6 sm:gap-0">
+                    <!-- Parents -->
+                    <div class="flex items-start gap-3 w-full sm:w-1/4">
+                      <div class="bg-[#FB7D5B] flex items-center justify-center p-2 rounded-full w-10 h-10">
+                        <img src="Student.png" alt="Parents Icon" class="w-6 h-6">
+                      </div>
+                      <div class="flex flex-col gap-1">
+                        <p class="font-normal text-base sm:text-[18px] opacity-50 text-[#A098AE]">Parents:</p>
+                        <p class="font-bold text-[#303972] text-base sm:text-[18px]">Justin Hope</p>
+                      </div>
+                    </div>
+              
+                    <!-- Address -->
+                    <div class="flex items-start gap-3 w-full sm:w-1/4">
+                      <div class="bg-[#FB7D5B] flex items-center justify-center p-2 rounded-full w-10 h-10">
+                        <img src="Vector (2).png" alt="Address Icon" class="w-6 h-6">
+                      </div>
+                      <div class="flex flex-col gap-1">
+                        <p class="font-normal text-base sm:text-[18px] opacity-50 text-[#A098AE]">Address:</p>
+                        <p class="font-bold text-[#303972] text-base sm:text-[18px]">Jakarta, Indonesia</p>
+                      </div>
+                    </div>
+              
+                    <!-- Phone -->
+                    <div class="flex items-start gap-3 w-full sm:w-1/4">
+                      <div class="bg-[#FB7D5B] flex items-center justify-center p-2 rounded-full w-10 h-10">
+                        <img src="Call.png" alt="Phone Icon" class="w-6 h-6">
+                      </div>
+                      <div class="flex flex-col gap-1">
+                        <p class="font-normal text-base sm:text-[18px] opacity-50 text-[#A098AE]">Phone:</p>
+                        <p class="font-bold text-[#303972] text-base sm:text-[18px]">+12 345 6789 0</p>
+                      </div>
+                    </div>
+              
+                    <!-- Email -->
+                    <div class="flex items-start gap-3 w-full sm:w-1/4">
+                      <div class="bg-[#FB7D5B] flex items-center justify-center p-2 rounded-full w-10 h-10">
+                        <img src="Email (1).png" alt="Email Icon" class="w-6 h-6">
+                      </div>
+                      <div class="flex flex-col gap-1">
+                        <p class="font-normal text-base sm:text-[18px] opacity-50 text-[#A098AE]">Email:</p>
+                        <p class="font-bold text-[#303972] text-base sm:text-[18px]">Hope@mail.com</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="rounded-[20px] bg-white flex flex-col max-w-[1017px] p-6 sm:p-8 w-full">
+                <p class="text-2xl font-bold text-[#303972]">Payment History</p>
+              
+                <div class="flex flex-col gap-6 mt-8 overflow-x-auto">
+                  <!-- Single Row -->
+                  <div class="flex flex-wrap md:flex-nowrap justify-between items-center gap-4">
+                    <div class="flex items-center gap-4 min-w-[200px]">
+                      <div class="h-14 w-14 bg-[#FF4550] rounded-full flex items-center justify-center overflow-hidden">
+                        <img src="Layer 2.png" class="w-8 h-8 object-contain" />
+                      </div>
+                      <p class="font-bold text-[#303972] text-lg">#123456789</p>
+                    </div>
+                    <p class="font-normal opacity-50 text-sm min-w-[150px]">2 March 2021, 13:45 PM</p>
+                    <p class="font-bold text-lg text-[#303972] min-w-[100px]">$ 50,036</p>
+                    <p class="font-bold text-lg text-[#4CBC9A] min-w-[100px]">Complete</p>
+                  </div>
+              
+                  <!-- (Repeat similar rows...) -->
+              
+                  <div class="flex flex-wrap md:flex-nowrap justify-between items-center gap-4">
+                    <div class="flex items-center gap-4 min-w-[200px]">
+                      <div class="h-14 w-14 bg-[#FF4550] rounded-full flex items-center justify-center overflow-hidden">
+                        <img src="Layer 2.png" class="w-8 h-8 object-contain" />
+                      </div>
+                      <p class="font-bold text-[#303972] text-lg">#123456789</p>
+                    </div>
+                    <p class="font-normal opacity-50 text-sm min-w-[150px]">2 March 2021, 13:45 PM</p>
+                    <p class="font-bold text-lg text-[#303972] min-w-[100px]">$ 50,036</p>
+                    <p class="font-bold text-lg text-[#FF4550] min-w-[100px]">Canceled</p>
+                  </div>
+                  <div class="flex flex-wrap md:flex-nowrap justify-between items-center gap-4">
+                    <div class="flex items-center gap-4 min-w-[200px]">
+                      <div class="h-14 w-14 bg-[#FF4550] rounded-full flex items-center justify-center overflow-hidden">
+                        <img src="Layer 2.png" class="w-8 h-8 object-contain" />
+                      </div>
+                      <p class="font-bold text-[#303972] text-lg">#123456789</p>
+                    </div>
+                    <p class="font-normal opacity-50 text-sm min-w-[150px]">2 March 2021, 13:45 PM</p>
+                    <p class="font-bold text-lg text-[#303972] min-w-[100px]">$ 50,036</p>
+                    <p class="font-bold text-lg text-[#FF4550] min-w-[100px]">Canceled</p>
+                  </div>
+                  <div class="flex flex-wrap md:flex-nowrap justify-between items-center gap-4">
+                    <div class="flex items-center gap-4 min-w-[200px]">
+                      <div class="h-14 w-14 bg-[#FF4550] rounded-full flex items-center justify-center overflow-hidden">
+                        <img src="Layer 2.png" class="w-8 h-8 object-contain" />
+                      </div>
+                      <p class="font-bold text-[#303972] text-lg">#123456789</p>
+                    </div>
+                    <p class="font-normal opacity-50 text-sm min-w-[150px]">2 March 2021, 13:45 PM</p>
+                    <p class="font-bold text-lg text-[#303972] min-w-[100px]">$ 50,036</p>
+                    <p class="font-bold text-lg text-[#FF4550] min-w-[100px]">Canceled</p>
+                  </div>
+              
+                </div>
+              
+                <!-- Pagination -->
+                <div class="flex flex-col md:flex-row items-center justify-between gap-4 mt-12">
+                  <div class="text-sm text-gray-600">
+                    Showing 1-5 from <span class="font-semibold text-[#4D44B5]">100</span> data
+                  </div>
+                  <div class="flex items-center space-x-2">
+                    <a href="#" class="p-2 text-gray-400 hover:text-gray-600">◀</a>
+                    <a href="#" class="w-8 h-8 flex items-center justify-center bg-[#4D44B5] text-white rounded-full">1</a>
+                    <a href="#" class="w-8 h-8 flex items-center justify-center bg-white text-gray-700 border rounded-full hover:text-white hover:bg-[#4D44B5]">2</a>
+                    <a href="#" class="w-8 h-8 flex items-center justify-center bg-white text-gray-700 border rounded-full hover:text-white hover:bg-[#4D44B5]">3</a>
+                    <a href="#" class="p-2 text-gray-400 hover:text-gray-600">▶</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="Scheduledetails hidden 2xl:flex flex-col max-w-2xl w-[30%] h-[1065px]">
+                <div class="bg-[#f5f7fb] rounded-2xl px-6 w-full max-w-md h-[1066px] gap-[24px] flex flex-col">
+                <div class="bg-white rounded-2xl h-[138px] p-6 mb-6">
+                    <h2 class="text-2xl font-bold text-[#2f3676]">Schedule Details</h2>
+                    <p class="text-gray-400 mt-2">Thursday, 10th April , 2021</p>
+                  </div>
+              
+                  <!-- Schedule Items -->
+                  <div class="flex flex-col space-y-4 overflow-y-auto gap-[24px]">
+                    
+                    <!-- Card 1 -->
+                    <div class="flex bg-white rounded-2xl overflow-hidden h-[183px] shadow-sm">
+                      <div class="w-2 bg-[#6B4EFF] rounded-l-2xl"></div>
+                      <div class="flex-1 p-4">
+                        <h3 class="font-bold text-[#2f3676]">Basic Algorithm</h3>
+                        <p class="text-gray-400 text-sm mb-4">Algorithm</p>
+                        <div class="flex items-center gap-2 text-gray-400 text-sm mb-1">
+                          <span>📅</span>
+                          <span>March 20, 2021</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-gray-400 text-sm">
+                          <span>⏰</span>
+                          <span>09.00 - 10.00 AM</span>
+                        </div>
+                      </div>
+                      <div class="flex items-center pr-4">
+                        <div class="w-10 h-10 bg-[#D3C7F3] rounded-full"></div>
+                      </div>
+                    </div>
+              
+                    <!-- Card 2 -->
+                    <div class="flex bg-white rounded-2xl overflow-hidden h-[183px] shadow-sm">
+                      <div class="w-2 bg-[#FF7E5E] rounded-l-2xl"></div>
+                      <div class="flex-1 p-4">
+                        <h3 class="font-bold text-[#2f3676]">Basic Art</h3>
+                        <p class="text-gray-400 text-sm mb-4">Art</p>
+                        <div class="flex items-center gap-2 text-gray-400 text-sm mb-1">
+                          <span>📅</span>
+                          <span>March 20, 2021</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-gray-400 text-sm">
+                          <span>⏰</span>
+                          <span>09.00 - 10.00 AM</span>
+                        </div>
+                      </div>
+                      <div class="flex items-center pr-4">
+                        <div class="w-10 h-10 bg-[#D3C7F3] rounded-full"></div>
+                      </div>
+                    </div>
+              
+                    <!-- Card 3 -->
+                    <div class="flex bg-white rounded-2xl overflow-hidden h-[183px] shadow-sm">
+                      <div class="w-2 bg-[#FDCB5A] rounded-l-2xl"></div>
+                      <div class="flex-1 p-4">
+                        <h3 class="font-bold text-[#2f3676]">HTML & CSS Class</h3>
+                        <p class="text-gray-400 text-sm mb-4">Programming</p>
+                        <div class="flex items-center gap-2 text-gray-400 text-sm mb-1">
+                          <span>📅</span>
+                          <span>March 20, 2021</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-gray-400 text-sm">
+                          <span>⏰</span>
+                          <span>09.00 - 10.00 AM</span>
+                        </div>
+                      </div>
+                      <div class="flex items-center pr-4">
+                        <div class="w-10 h-10 bg-[#D3C7F3] rounded-full"></div>
+                      </div>
+                    </div>
+              
+                    <!-- Card 4 -->
+                    <div class="flex bg-white rounded-2xl overflow-hidden h-[183px] shadow-sm">
+                      <div class="w-2 bg-[#2f3676] rounded-l-2xl"></div>
+                      <div class="flex-1 p-4">
+                        <h3 class="font-bold text-[#2f3676]">Simple Past Tense</h3>
+                        <p class="text-gray-400 text-sm mb-4">English</p>
+                        <div class="flex items-center gap-2 text-gray-400 text-sm mb-1">
+                          <span>📅</span>
+                          <span>March 20, 2021</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-gray-400 text-sm">
+                          <span>⏰</span>
+                          <span>09.00 - 10.00 AM</span>
+                        </div>
+                      </div>
+                      <div class="flex items-center pr-4">
+                        <div class="w-10 h-10 bg-[#D3C7F3] rounded-full"></div>
+                      </div>
+                    </div>
+              
+                  </div>
+                  <div class="viewmoor rounded-[40px] h-[61px] bg-gray-500/10 justify-center flex items-center font-bold text-[#4D44B5] text-[18px] hover:bg-[#4D44B5] hover:text-white mt-[32px]">
+                    View more</div>
+            </div>
+        </div>
+         </div>
+    </div>
+    <script>
+        function updateProfilePic(event) {
+          const file = event.target.files[0];
+          const reader = new FileReader();
+          reader.onload = function(e) {
+            document.getElementById('profileImage').src = e.target.result;
+          };
+          reader.readAsDataURL(file);
+        }
+        </script>
+</body>
+</html>
